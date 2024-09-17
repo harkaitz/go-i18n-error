@@ -9,7 +9,7 @@ import (
 // code between parentheses.
 func CheckError(t *testing.T, e error, code string) error {
 	if e == nil {
-		t.Fatalf("Should have failed with code (%v)", code)
+		t.Fatalf("Should have failed with code (%v), instead succeeded.", code)
 	}
 	if !strings.Contains(e.Error(), "(" + code + ")") {
 		t.Fatalf("Should have failed with %v: %s", code, e)
